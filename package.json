@@ -1,0 +1,13 @@
+{
+	"name": "internshippr",
+	"version": "1.0.0",
+	"description": "Logging and reminders for me",
+	"scripts": {
+		"start": "echo \"Server and client need to be started seperately\" && exit 0",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"author": "Stef van Dijk",
+	"engines": {
+		"node": "10.16.2"
+	}
+}
