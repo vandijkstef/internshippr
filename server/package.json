@@ -1,0 +1,28 @@
+{
+	"name": "internshippr-server",
+	"version": "1.0.0",
+	"description": "Server side of Internshippr",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Stef van Dijk",
+	"dependencies": {
+		"@types/bluebird": "^3.5.27",
+		"@types/node": "^12.7.4",
+		"@types/validator": "^10.11.3",
+		"@typescript-eslint/parser": "^2.1.0",
+		"eslint-import-resolver-typescript": "^1.1.1",
+		"express": "^4.17.1",
+		"express-graphql": "^0.9.0",
+		"faker": "^4.1.0",
+		"graphql": "^14.5.4",
+		"pg": "^7.12.1",
+		"pg-hstore": "^2.3.3",
+		"reflect-metadata": "^0.1.13",
+		"sequelize": "^5.18.1",
+		"sequelize-cli": "^5.5.1",
+		"sequelize-typescript": "^1.0.0",
+		"typescript-eslint-parser": "^22.0.0"
+	}
+}
