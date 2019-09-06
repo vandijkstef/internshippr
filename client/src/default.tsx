@@ -18,8 +18,6 @@ export default class DEFAULT extends React.Component<Props, State> {
 	}
 
 	render() {
-		return (
-			// Render here
-		)
+		return "I'm rendering defaultly";
 	}
 }
