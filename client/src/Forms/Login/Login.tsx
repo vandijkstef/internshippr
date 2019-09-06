@@ -1,7 +1,10 @@
 import React from 'react';
+// QUESTION: Why doesn't this work?
+// import { ToggleRegisterLogin as Toggle } from '../Components/ToggleRegisterLogin';
+import ToggleRegisterLogin from '../Components/ToggleRegisterLogin';
 
 export interface Props {
-
+	stateChange: React.MouseEventHandler;
 }
 
 export interface State {
@@ -23,7 +26,7 @@ export default class Login extends React.Component<Props, any> {
     	this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleChange(e: any) {
+	handleChange(e: React.ChangeEvent<HTMLInputElement>) {
 		// QUESTION:
 		// This doesn't work when I use my interface LoginState
 		// Obviously, it can't type-check, but can it be done (partially) dynamic?
@@ -32,8 +35,12 @@ export default class Login extends React.Component<Props, any> {
 		});
 	}
 
-	handleSubmit(e: any) {
+	// QUESTION:
+	// Use case: e.target.submit()
+	// This works with React.ChangeEvent<HTMLFormElement>, but it's not really a 'Change'
+	handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
 		console.log(`Partymode!`, this.state);
+		e.target.submit();
 		e.preventDefault();
 	}
 
@@ -48,6 +55,7 @@ export default class Login extends React.Component<Props, any> {
 					Password
 					<input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
 				</label>
+				<ToggleRegisterLogin stateChange={this.props.stateChange} isOnLogin={true} />
 				<input type="submit"/>
 			</form>
 		)
