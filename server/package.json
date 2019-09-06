@@ -2,8 +2,10 @@
 	"name": "internshippr-server",
 	"version": "1.0.0",
 	"description": "Server side of Internshippr",
-	"main": "server.js",
+	"main": "dist/server.js",
 	"scripts": {
+		"start": "ts-node server",
+		"dev": "ts-nodemon server",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Stef van Dijk",
