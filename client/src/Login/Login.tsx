@@ -1,14 +1,17 @@
 import React from 'react';
 
-interface LoginState {
-	username: string,
-	password: string,
-	error?: Error
+export interface Props {
+
 }
 
-class Login extends React.Component<{}, any> {
+export interface State {
+	username: string,
+	password: string,
+}
+
+export default class Login extends React.Component<Props, any> {
 	
-	constructor(props: {}) {
+	constructor(props: Props) {
 		super(props);
 
 		this.state = {
@@ -21,11 +24,12 @@ class Login extends React.Component<{}, any> {
 	}
 
 	handleChange(e: any) {
-		const theTarget = e.target as HTMLInputElement;
-		const newState: any = {};
-		newState[theTarget.name] = theTarget.value;
-		console.log(newState);
-		this.setState(newState);
+		// QUESTION:
+		// This doesn't work when I use my interface LoginState
+		// Obviously, it can't type-check, but can it be done (partially) dynamic?
+		this.setState({
+			[e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+		});
 	}
 
 	handleSubmit(e: any) {
@@ -42,12 +46,10 @@ class Login extends React.Component<{}, any> {
 				</label>
 				<label>
 					Password
-					<input type="password" name="password" onChange={this.handleChange} />
+					<input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
 				</label>
 				<input type="submit"/>
 			</form>
 		)
 	}
 }
-
-export default Login;
