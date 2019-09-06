@@ -1,7 +1,5 @@
 import React from 'react';
-// QUESTION: Why doesn't this work?
-// import { ToggleRegisterLogin as Toggle } from '../Components/ToggleRegisterLogin';
-import ToggleRegisterLogin from '../Components/ToggleRegisterLogin';
+import { default as Toggle } from '../Components/ToggleRegisterLogin';
 
 export interface Props {
 	stateChange: React.MouseEventHandler;
@@ -10,39 +8,37 @@ export interface Props {
 export interface State {
 	username: string,
 	password: string,
+	[key: string]: string | boolean
 }
 
-export default class Login extends React.Component<Props, any> {
+export default class Login extends React.Component<Props, State> {
 	
-	constructor(props: Props) {
-		super(props);
+	// constructor(props: Props) {
+	// 	super(props);
 
-		this.state = {
-			username: '',
-			password: ''
-		}
+	// 	this.state = {
+	// 		username: '',
+	// 		password: ''
+	// 	}
 
-		this.handleChange = this.handleChange.bind(this);
-    	this.handleSubmit = this.handleSubmit.bind(this);
-	}
+	// }
 
-	handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-		// QUESTION:
-		// This doesn't work when I use my interface LoginState
-		// Obviously, it can't type-check, but can it be done (partially) dynamic?
+	public state: State = {
+		username: '',
+		password: ''
+	};
+	
+	handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		this.setState({
-			[e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+			[e.currentTarget.name]: e.target.value
 		});
-	}
+	};
 
-	// QUESTION:
-	// Use case: e.target.submit()
-	// This works with React.ChangeEvent<HTMLFormElement>, but it's not really a 'Change'
-	handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
+	handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		console.log(`Partymode!`, this.state);
 		e.target.submit();
 		e.preventDefault();
-	}
+	};
 
 	render() {
 		return (
@@ -55,7 +51,7 @@ export default class Login extends React.Component<Props, any> {
 					Password
 					<input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
 				</label>
-				<ToggleRegisterLogin stateChange={this.props.stateChange} isOnLogin={true} />
+				<Toggle stateChange={this.props.stateChange} isOnLogin={true} />
 				<input type="submit"/>
 			</form>
 		)

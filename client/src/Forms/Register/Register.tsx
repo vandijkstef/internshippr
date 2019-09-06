@@ -19,15 +19,22 @@ export default class Register extends React.Component<Props, State> {
 			password: '',
 			email: ''
 		}
+
+		this.handleChange = this.handleChange.bind(this);
+    	this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleSubmit() {
-
+	handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+		this.setState({
+			[e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+		});
 	}
 
-	handleChange() {
-
+	handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		console.log('Wow Classic', this.state);
+		e.preventDefault();
 	}
+
 
 	render() {
 		return (
@@ -42,8 +49,7 @@ export default class Register extends React.Component<Props, State> {
 				</label>
 				<label>
 					Password
-					{/* QUESTION: Apparently Im not allowed to add `autocomplete="new-password" -> WHY?! */}
-					<input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+					<input type="password" name="password" value={this.state.password} autoComplete="new-password" onChange={this.handleChange} />
 				</label>
 				<ToggleRegisterLogin stateChange={this.props.stateChange} isOnLogin={false} />
 				<input type="submit"/>
