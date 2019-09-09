@@ -1,10 +1,6 @@
 import React from 'react';
-import { State as LoginState } from '../Login/Login';
-import ToggleRegisterLogin from '../Components/ToggleRegisterLogin';
-
-export interface Props {
-	stateChange: React.MouseEventHandler;
-}
+import { State as LoginState, Props } from '../Login/Login';
+import { default as Toggle } from '../Components/ToggleRegisterLogin';
 
 export interface State extends LoginState {
 	email: string
@@ -38,22 +34,43 @@ export default class Register extends React.Component<Props, State> {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit} >
+			<div className="wrapper" >
 				<label>
 					Username
-					<input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+					<input
+						type="text"
+						name="username"
+						autoComplete="username"
+						value={this.state.username}
+						onChange={this.handleChange}
+					/>
 				</label>
 				<label>
 					E-mail
-					<input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
+					<input
+						type="email"
+						name="email"
+						autoComplete="email"
+						value={this.state.email}
+						onChange={this.handleChange}
+					/>
 				</label>
 				<label>
 					Password
-					<input type="password" name="password" value={this.state.password} autoComplete="new-password" onChange={this.handleChange} />
+					<input
+						type="password"
+						name="password"
+						value={this.state.password}
+						autoComplete="new-password"
+						onChange={this.handleChange}
+					/>
 				</label>
-				<ToggleRegisterLogin stateChange={this.props.stateChange} isOnLogin={false} />
+				<Toggle
+					stateChange={this.props.stateChange}
+					isOnLogin={false}
+				/>
 				<input type="submit"/>
-			</form>
+			</div>
 		)
 	}
 }

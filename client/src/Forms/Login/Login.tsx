@@ -3,12 +3,11 @@ import { default as Toggle } from '../Components/ToggleRegisterLogin';
 
 export interface Props {
 	stateChange: React.MouseEventHandler;
+	handleChange: React.ChangeEvent;
 }
 
 export interface State {
-	username: string,
-	password: string,
-	[key: string]: string | boolean
+
 }
 
 export default class Login extends React.Component<Props, State> {
@@ -27,12 +26,6 @@ export default class Login extends React.Component<Props, State> {
 		username: '',
 		password: ''
 	};
-	
-	handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		this.setState({
-			[e.currentTarget.name]: e.target.value
-		});
-	};
 
 	handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		console.log(`Partymode!`, this.state);
@@ -42,18 +35,32 @@ export default class Login extends React.Component<Props, State> {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit} >
+			<div className="wrapper">
 				<label>
 					Username
-					<input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+					<input
+						type="text"
+						name="username"
+						autoComplete="username"
+						value={this.state.username} onChange={this.props.handleChange}
+					/>
 				</label>
 				<label>
 					Password
-					<input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+					<input
+						type="password"
+						name="password"
+						autoComplete="current-password"
+						value={this.state.password}
+						onChange={this.handleChange}
+					/>
 				</label>
-				<Toggle stateChange={this.props.stateChange} isOnLogin={true} />
+				<Toggle
+					stateChange={this.props.stateChange}
+					isOnLogin={true}
+				/>
 				<input type="submit"/>
-			</form>
+			</div>
 		)
 	}
 }

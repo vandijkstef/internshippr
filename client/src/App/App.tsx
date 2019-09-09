@@ -1,7 +1,6 @@
 import React from 'react';
-import Login from '../Forms/Login/Login';
 import Clock from '../Clock/Clock';
-import Register from '../Forms/Register/Register';
+import { default as Form, FormTypes } from '../Forms/Form';
 
 export interface Props {
 
@@ -33,9 +32,9 @@ export default class App extends React.Component<Props, State> {
 	render() {
 		let content = <Clock />;
 		if (!this.state.isLoggedIn) {
-			content = <Login stateChange={this.handleStateChange} />;
+			content = <Form type={FormTypes.Login} stateChange={this.handleStateChange} />;
 			if (this.state.isRegistering) {
-				content = <Register stateChange={this.handleStateChange} />;
+				content = <Form type={FormTypes.Register} stateChange={this.handleStateChange} />;
 			}
 		}
 
