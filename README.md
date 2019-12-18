@@ -15,7 +15,6 @@ Logging and reminders for me
 	- Daily/Weekly etc
 	- Belong to user
 
-
 ## Stories
 
 - Create login
