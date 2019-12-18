@@ -1,6 +1,6 @@
 # Intershippr
 
-Logging and reminders for me
+Logging and reminders for me, and mario
 
 > Anything below this line is personal notes.
 > So yes, there is no documentation
