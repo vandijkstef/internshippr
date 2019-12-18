@@ -1,0 +1,21 @@
+server:
+- server/**/*
+
+client:
+- client/**/*
+
+devops:
+- devops/**/*
+
+i18n:
+- client/src/locales/**/*
+
+chore:
+- .*/**/*
+- Itermocil.yml
+- "*.code-workspace"
+
+core:
+- server/src/framework/Core/*
+- server/src/framework/Core/**/*
+- client/src/components/Core/**/*

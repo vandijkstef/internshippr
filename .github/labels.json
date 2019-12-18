@@ -1,0 +1,89 @@
+[
+    {
+        "name": "chore",
+        "color": "#130f40",
+        "description": "Updating configuration files",
+        "patterns": [
+            ".*/**/*",
+            "Itermocil.yml",
+            "*.code-workspace"
+        ]
+    },
+    {
+        "name": "devops",
+        "color": "#30336b",
+        "description": "Devops changes",
+        "patterns": [
+            "devops/**/*"
+        ]
+    },
+    {
+        "name": "dependencies",
+        "color": "#0652DD",
+        "description": "Update to dependency files"
+    },
+    {
+        "name": "server",
+        "color": "#FDA7DF",
+        "description": "Updates to server code",
+        "patterns": [
+            "server/**/*"
+        ]
+    },
+    {
+        "name": "client",
+        "color": "#A3CB38",
+        "description": "Updates to client code",
+        "patterns": [
+            "client/**/*"
+        ]
+    },
+    {
+        "name": "core",
+        "color": "#000000",
+        "description": "Updating core files",
+        "patterns": [
+            "server/src/framework/Core/*",
+            "server/src/framework/Core/**/*",
+            "client/src/components/Core/**/*"
+        ]
+    },
+    {
+        "name": "kitchensink",
+        "color": "#333333",
+        "description": "Updates in the kitchensink"
+    },
+    {
+        "name": "i18n",
+        "color": "#FFC312",
+        "description": "Changes to locales",
+        "patterns": [
+            "client/src/locales/**/*"
+        ]
+    },
+    {
+        "name": "technical debt",
+        "color": "#F79F1F",
+        "description": "Something is broken"
+    },
+    {
+        "name": "bug",
+        "color": "#EE5A24",
+        "description": "Something is broken"
+    },
+    {
+        "name": "security",
+        "color": "#EA2027",
+        "description": "Related to security vulnerabilities"
+    },
+    {
+        "name": "wontfix",
+        "color": "#FFFFFF",
+        "description": "This will not be worked on"
+    },
+    {
+        "name": "enhancement",
+        "color": "#12CBC4",
+        "description": "New feature or request"
+	}
+]
