@@ -3,7 +3,7 @@ name: Simone
 on: [push]
 
 jobs:
-  🧙‍♂️:
+  Wizarding:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
