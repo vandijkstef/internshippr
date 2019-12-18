@@ -6,7 +6,8 @@ jobs:
   Wizarding:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: vandijkstef/action-noticely
+    - uses: actions/checkout@v1
+    - uses: vandijkstef/action-noticely@master
       with:
+        milliseconds: 500
         token: ${{ secrets.GITHUB_TOKEN }}
