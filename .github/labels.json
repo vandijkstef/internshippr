@@ -28,7 +28,11 @@
         "description": "Updates to server code",
         "patterns": [
             "server/**/*"
-        ]
+        ],
+        "comments": {
+            "combinedWith": "client",
+            "text": ["You have modified server and client code. Please make sure to request a review from a front- and back-ender"]
+        }
     },
     {
         "name": "client",
@@ -46,7 +50,10 @@
             "server/src/framework/Core/*",
             "server/src/framework/Core/**/*",
             "client/src/components/Core/**/*"
-        ]
+        ],
+        "comments": {
+            "text": ["You have modified a core component. Please create an issue and/or PR on the [boilerplate](https://github.com/lifelynl/boilerplate)"]
+        }
     },
     {
         "name": "kitchensink",
@@ -59,7 +66,10 @@
         "description": "Changes to locales",
         "patterns": [
             "client/src/locales/**/*"
-        ]
+        ],
+        "comments": {
+            "text": ["You have updated i18n locales. Please make sure this PR only has these updates"]
+        }
     },
     {
         "name": "technical debt",
