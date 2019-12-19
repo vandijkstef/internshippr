@@ -5,7 +5,7 @@ const graphqlHTTP = require('express-graphql');
 // Schema
 const schema = require('./db/schema');
 
-// Setup
+// Setups
 const app = express();
 
 // Use
