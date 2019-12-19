@@ -1,7 +1,7 @@
 [
     {
         "name": "chore",
-        "color": "#130f40",
+        "color": "#c44569",
         "description": "Updating configuration files",
         "patterns": [
             ".*/**/*",
@@ -53,7 +53,7 @@
             "client/src/vbase/*"
         ],
         "comments": {
-            "text": ["You have modified a core component. Please create an issue and/or PR on the [boilerplate](https://github.com/lifelynl/boilerplate)"]
+            "text": ["You have modified a core component. Please create an issue and/or PR on the [boilerplate](https://github.com/lifelynl/boilerplate/issues/new)"]
         }
     },
     {
