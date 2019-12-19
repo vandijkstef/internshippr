@@ -8,7 +8,7 @@ const schema = require('./db/schema');
 // Setups
 const app = express();
 
-// Use
+// Uses
 app.use(
     '/graphql',
     graphqlHTTP({
