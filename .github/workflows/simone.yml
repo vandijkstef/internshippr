@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: vandijkstef/action-noticely@master
+    - uses: vandijkstef/action-noticely@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
