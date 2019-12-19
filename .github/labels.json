@@ -49,7 +49,8 @@
         "patterns": [
             "server/src/framework/Core/*",
             "server/src/framework/Core/**/*",
-            "client/src/components/Core/**/*"
+            "client/src/components/Core/**/*",
+            "client/src/vbase/*"
         ],
         "comments": {
             "text": ["You have modified a core component. Please create an issue and/or PR on the [boilerplate](https://github.com/lifelynl/boilerplate)"]
